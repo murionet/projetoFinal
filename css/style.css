@@ -17,10 +17,11 @@ nav {
   align-items: center;
   padding: 15px;
   position: relative;
+  
 }
 
 /* Estilização do menu em formato de pílula e seus links */
-.nav-list {
+.navMenu {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -30,11 +31,14 @@ nav {
   padding: 5px 55px;
   gap: clamp(1rem, 3vw, 4rem);
   background: transparent;
+ 
 }
-
+a.navLink {
+  text-decoration: none;
+  color: inherit;
+}
 /* Configuração do item de menu ativo (referência para o balão) */
-li.active {
-  color: rgb(255, 255, 255) !important;
+.navLinkActive {
   text-align: center;
   position: relative;
   padding: 6px 30px;
@@ -42,10 +46,12 @@ li.active {
   align-items: center;
   justify-content: center;
   z-index: 1;
+  color: rgb(255, 255, 255);
+   text-decoration: none;
 }
 
 /* Criação do efeito de balão azul por trás do link ativo */
-li.active::before {
+.navLinkActive::before {
   content: "";
   position: absolute;
   top: 0;
@@ -56,10 +62,11 @@ li.active::before {
   border-radius: 50px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
   z-index: -1;
+  text-decoration: none;
 }
 
 /* Posicionamento e dimensões do ícone do carrinho de compras */
-.carrinho {
+.cartIcon {
   width: 25px;
   height: auto;
   cursor: pointer;
@@ -67,13 +74,8 @@ li.active::before {
   right: 171px;
 }
 
-/* Estilo para destacar o elemento da página atual */
-#atual {
-  color: rgb(255, 255, 255);
-}
-
 /* Reset visual padrão de todos os links do documento */
-.links {
+.authLinks {
   text-decoration: none;
   color: black;
 }
@@ -88,53 +90,78 @@ li.active::before {
 }
 
 /* Configurações de dimensão, corte e centralização do banner principal */
-img#banner {
+img#headerBanner {
   display: block;
   width: 80%;
   max-width: 1400px;
-  height: 400px;
+  height: auto;
+  max-height: 400px;
   object-fit: cover;
   margin: 40px auto 0 auto;
 }
 
 /* Alinhamento e espaçamento interno da seção de promoções */
-#promo {
+#promoTitle {
   text-align: center;
   padding: 45px;
 }
 
+.productTitle {
+  font-size: 1rem;
+  font-weight: medium;
+  margin-top: 4rem;
+  display: flex;
+}
+.productTitle a {
+  text-decoration: none;
+  color: black;
+  display: inline-flex;
+}
+
 /* Estilização base das imagens dos blocos de produtos */
-.imgsbloco {
+.productImage {
   width: 100%;
   max-width: 245px;
   height: auto;
-  transition: 0.3s;
+  transition: transform 0.3s ease;
   margin-right: 50px;
 }
 
-/* Efeito de flutuação e alteração do cursor ao passar o mouse sobre o produto */
-.imgsbloco:hover {
+/* Efeito de flutuação ao passar o mouse */
+.productImage:hover {
   transform: translateY(-10px);
   cursor: pointer;
 }
 
 /* Alinhamento horizontal e espaçamento adaptável da galeria de produtos */
-#galeria {
+#promoGallery {
   display: flex;
   gap: clamp(40px, 3vw, 100px);
   margin-left: 50px;
 }
 
 /* Container de fundo da galeria de produtos */
-#galeria-bloco {
+#galleryContainer {
   background: #ffffff;
   padding: 50px;
   display: flex;
   justify-content: center;
 }
 
-/* Seção de destaque com fundo degradê azul para exibição de conteúdos */
-#texto-aba {
+.oldPrice {
+  color: red;
+  font-size: 1.2rem;
+  text-decoration: line-through;
+}
+
+.newPrice {
+  color: rgb(4, 139, 4);
+  font-size: 1.5rem;
+  font-weight: medium;
+}
+
+/* Seção de destaque com fundo degradê azul */
+#ctaSection {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -146,9 +173,9 @@ img#banner {
   margin: 150px auto;
 }
 
-/* Caixinha de texto com efeito translúcido (Glassmorphism) */
-#vidro {
-  background: #0173d044;
+/* Caixinha de texto com efeito translúcido (Glassmorphism corrigido) */
+#contactTag {
+  background: rgba(1, 114, 208, 0.27);
   border: 1px solid #0172d0;
   border-radius: 16px;
   padding: 10px;
@@ -159,32 +186,36 @@ img#banner {
 }
 
 /* Bloco estrutural para organizar parágrafos em colunas */
-.textos {
+.ctaAction {
   display: flex;
   flex-direction: column;
   gap: 5px;
   width: 40%;
 }
 
-/* Container em formato de cápsula para agrupar botões ou chamadas de texto */
-#texto-outraaba {
-  display: inline-flex;
+/* Container em formato de cápsula */
+#ctaSection {
+
   background-color: white;
   border-radius: 50px;
   justify-content: space-between;
   padding: 7px;
   margin-top: 30px;
+  display: flex;
+  justify-content: center; /* Centraliza horizontalmente */
 }
 
 /* Customização do texto escuro dentro da cápsula */
-#p-branco {
-  color: rgb(54, 54, 54);
-  padding: 7px;
+#spaceWhite {
+  text-align: center;
+  color: rgb(255, 255, 255);
+  margin-top: 60px;
   font-size: 1.1rem;
+  padding-left: 500px;
 }
 
 /* Botão em formato de pílula azul para ações principais */
-#p-azul {
+#spaceBlue {
   color: white;
   font-size: 15px;
   background-color: #1f77d6;
@@ -192,12 +223,12 @@ img#banner {
   padding: 10px;
   cursor: pointer;
   width: 300px;
+  transition: background-color 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
 }
 
-/* Efeito visual e sombra de destaque no hover do botão azul */
-#p-azul:hover {
+/* Efeito visual no hover do botão azul */
+#spaceBlue:hover {
   background-color: #0172d0;
-  transition: background-color 0.3s ease-in-out;
   box-shadow: 0 6px 3px rgba(0, 0, 0, 0.2);
 }
 
@@ -220,36 +251,36 @@ footer {
 }
 
 /* Reset de margens e distribuição uniforme das listas do rodapé */
-.footer-lista {
+.footerList {
   list-style: none;
   padding: 0;
   flex: 1;
 }
 
 /* Espaçamento vertical entre os links do rodapé */
-.footer-lista li {
+.footerList li {
   padding: 10px 0;
 }
 
 /* Estilo padrão e transição dos links do rodapé */
-.footer-lista li a {
+.footerList li a {
   text-decoration: none;
   color: #ffffff;
   transition: color 0.3s ease;
 }
 
-/* Mudança de cor suave ao passar o mouse sobre os links do rodapé */
-.footer-lista li a:hover {
+/* Mudança de cor suave ao passar o mouse */
+.footerList li a:hover {
   color: #cccccc;
 }
 
 /* Configuração de largura e respiro lateral para as colunas do rodapé */
-.coluna {
+.footerColumn {
   flex: 1;
   padding: 0px 20px;
 }
 
-/* Posicionamento do ícone de login na barra de navegação */
+/* Posicionamento do ícone de login */
 #loginIcon {
   display: flex;
   position: absolute;

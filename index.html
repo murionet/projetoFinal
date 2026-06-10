@@ -17,35 +17,35 @@
   </head>
   <body>
     <nav>
-      <a href="/index.html"
-        ><img id="pear" src="../assets/perlogo-nobg.png" alt="Logo da Pear"
-      /></a>
-      <ul class="nav-list">
-        <li class="active">
-          <a id="atual" class="links" href="index.html">Início</a>
-        </li>
-        <li><a class="links" href="/pages/produtos.html">Produtos</a></li>
-        <li><a class="links" href="/pages/sobre.html">Sobre</a></li>
-        <li><a class="links" href="/pages/contato.html">Contato</a></li>
-      </ul>
+      <a href="./css/style.css"> <img id="pear" src="../assets/perlogo-nobg.png" alt="Logo da Pear"/></a>
+     <ul class="navMenu">
+    <li>
+      <a class="navLinkActive" aria-current="page" href="index.html">Início</a>
+    </li>
+    <li>
+      <a class="navLink" href="./pages/produtos.html">Produtos</a>
+    </li>
+    <li>
+      <a class="navLink" href="./pages/sobre.html">Sobre</a>
+    </li>
+    <li>
+      <a class="navLink" href="./pages/contato.html">Contato</a>
+    </li>
+  </ul>
       <div id="loginSection">
         <div id="textLogin">
-          <strong
-            ><u><a class="links" href="/pages/login.html">Entrar</a></u></strong
-          >
-          ou <br />
-          <strong
-            ><u
-              ><a class="links" href="/pages/cadastro.html">Cadastre-se</a></u
-            ></strong
-          >
+
+          <strong><u><a class="authLinks" href="/pages/login.html">Entrar</a></u></strong>
+          ou <br/>
+          <strong><u><a class="authLinks" href="/pages/cadastro.html">Cadastre-se</a></u></strong>
+
         </div>
         <div id="loginIcon">
           <img src="assets/icon.png" alt="Ícone de login" />
         </div>
       </div>
       <img
-        class="carrinho"
+        class="cartIcon"
         src="assets/carrinho-header.png"
         alt="Carrinho de compras"
       />
@@ -53,100 +53,98 @@
 
     <header>
       <img
-        id="banner"
+        id="headerBanner"
         src="assets/header-banner.png"
         alt="Banner de eletrônicos"
       />
 
-      <h1 id="promo">PROMOÇÕES</h1>
+      <h1 id="promoTitle">PROMOÇÕES</h1>
 
       <section>
-        <div id="galeria-bloco">
-          <div id="galeria">
+        <div id="galleryContainer">
+          <div id="promoGallery">
             <div>
               <img
-                class="imgsbloco"
+                class="productImage"
                 src="assets/itens-promo/notebook-promo.png"
                 alt="Notebook Acer em promoção"
               />
-              Notebook Acer Nitro V15 Core i5 <br />
+              <p class="productTitle">Notebook Acer Nitro V15 Core i5</p>
               13240h 16gb Ram Ddr5 512gb SSD<br />
               Geforce RTX3050 6gb 15.6” <br />
               Fhd Linux - Preto <br /><br />De:
-              <p style="color: red">R$ 10.999,00</p>
+              <p class="oldPrice">R$ 10.999,00</p>
               Por apenas:
-              <p style="color: rgb(4, 139, 4)">R$ 8.999,00</p>
+              <p class="newPrice">R$ 8.999,00</p>
             </div>
             <div>
               <img
-                class="imgsbloco"
+                class="productImage"
                 src="assets/itens-promo/headphone-promo.png"
                 alt="Air Pods Max 2 em promoção"
               />
-              AirPods Max 2ª Geração - Apple <br />
+              <p class="productTitle">AirPods Max 2ª Geração  Apple</p>
               Fones de ouvido sem fio, <br />
-              áudio espacial e design icônico. <br />
+              áudio espacial e design icônico. </p><br />
               <br />
               De:
-              <p style="color: red">R$ 7.899,00</p>
+              <p class="oldPrice">R$ 7.899,00</p>
               Por apenas:
-              <p style="color: rgb(4, 139, 4)">R$ 6.599,00</p>
+              <p class="newPrice">R$ 6.599,00</p>
             </div>
             <div>
               <img
-                class="imgsbloco"
+                class="productImage"
                 src="assets/itens-promo/Rectangle_4.png"
                 alt="Xiaomi 15T Pro em promoção"
-              />
-              Apple iPhone 16 (256 GB) – Preto <br /><br /><br />
-              <br />
+              /> <p class="productTitle"> Apple iPhone 16 (256 GB) – Preto <br /><br /><br />
+              <br /> </p>
               De:
-              <p style="color: red">R$ 8.399,00</p>
+              <p class="oldPrice">R$ 8.399,00</p>
               Por apenas:
-              <p style="color: rgb(4, 139, 4)">R$ 6.490,00</p>
+              <p class="newPrice">R$ 6.490,00</p>
             </div>
             <div>
               <img
-                class="imgsbloco"
+                class="productImage"
                 src="assets/itens-promo/ps5-promo.png"
                 alt="PS5 em promoção"
               />
-              Console Playstation 5 Slim Digital <br />
+              <p class="productTitle">Console Playstation 5 Slim Digital <br />
               Edition, 825GB, USB, HDMI, Branco <br /><br /><br />
               De:
-              <p style="color: red">R$ 4.999,00</p>
+              <p class="oldPrice">R$ 4.999,00</p>
               Por apenas:
-              <p style="color: rgb(4, 139, 4)">R$ 3.999,00</p>
+              <p class="newPrice">R$ 3.999,00</p>
             </div>
             <div>
               <img
-                class="imgsbloco"
+                class="productImage"
                 src="assets/itens-promo/Rectangle_4_1.png"
                 alt="Filtro de linha em promoção"
-              />
-              Apple Airpods Pro 3 <br /><br /><br /><br />De:
-              <p style="color: red">R$ 2399,00</p>
+              /> <p class="productTitle">Apple Airpods Pro 3</p> <br /><br /><br /><br />De:
+              <p class="oldPrice">R$ 2399,00</p>
               Por apenas:
-              <p style="color: rgb(4, 139, 4)">R$ 1.999,00</p>
+              <p class="newPrice">R$ 1.999,00</p>
             </div>
           </div>
         </div>
 
-        <div id="texto-aba">
-          <div class="textos">
-            <p id="vidro">Contate-nos</p>
+        <div id="ctaSection">
+          <div class="ctaContent">
+            <p id="contactTag">Contate-nos</p>
             <h1>Eletrônicos de alto desempenho para a sua empresa!</h1>
             <p>
               Aumente a produtividade com nossa linha corporativa de notebooks,
               tablets e acessórios. Oferecemos soluções completas de hardware
               para impulsionar o crescimento do seu negócio.
             </p>
-            <section id="texto-outraaba">
-              <p id="p-branco">O que sua empresa precisa hoje?</p>
-              <button id="p-azul">Falar com especialista</button>
+            <section id="ctaAction">
+              <p id="spaceWhite">O que sua empresa precisa hoje?</p>
+              <button id="spaceBlue">Falar com especialista</button>
             </section>
           </div>
-          <div id="">
+          <div class="footerColumn">
             <img src="assets/notebook.png" alt="Imagem de um notebook" />
           </div>
         </div>
@@ -154,7 +152,7 @@
     </header>
 
     <footer>
-      <div class="coluna">
+      <div class="footerColumn">
         <img id="foto-sobre" src="assets/Group 4.png" alt="" width="200px" />
         <br />
         <br />
@@ -166,8 +164,8 @@
         <p><strong>Tecnologia da forma que você nunca viu.</strong></p>
       </div>
 
-      <div class="coluna">
-        <ul class="footer-lista">
+      <div class="footerColumn">
+        <ul class="footerList">
           <h1 class="titulos">Categorias</h1>
           <li><a href="index.html">Início</a></li>
           <li><a href="/pages/produtos.html">Produtos</a></li>
@@ -176,9 +174,9 @@
         </ul>
       </div>
 
-      <div class="coluna">
-        <ul class="footer-lista">
-          <h1 class="titulos">Atendimento</h1>
+      <div class="footerColumn">
+        <ul class="footerList">
+          <h1 class="titleFooter">Atendimento</h1>
           <li>Fale conosco</li>
           <li>Suporte técnico</li>
           <li>Política de devolução</li>
@@ -187,10 +185,10 @@
         </ul>
       </div>
 
-      <div class="coluna">
-        <h1 class="titulos">Formas de Pagamento</h1>
+      <div class="footerColumn">
+        <h1 class="paymentMethodsImage">Formas de Pagamento</h1>
         <img
-          class="titulos"
+          class="paymentMethodsImage"
           src="assets/payments-footer.png"
           alt="Formas de pagamento"
           width="300px"
