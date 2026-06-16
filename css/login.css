@@ -7,8 +7,6 @@
   --cor-black: #1f1f1f;
   --cor-white: #fafafa;
   --cor-lightgray: #acacac;
-
-  --fonte-padrao: Arial, Helvetica, sans-serif;
 }
 
 /* Reset de margens, preenchimentos e bordas padrões */
@@ -19,73 +17,72 @@
   box-sizing: border-box;
 }
 
-/* Configuração da família de fontes global do corpo da página */
 body {
-  font-family: var(--fonte-padrao);
+  font-family: "Poppins", sans-serif;
+  background-color: var(--cor-white);
 }
 
-/* Container principal com fundo em degradê e centralização total via Flexbox */
-main {
+/* Container principal com fundo em degradê e centralização total */
+.loginMain {
   background: linear-gradient(to bottom, #5eacff 0%, #386799 100%);
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 20px;
 }
 
 /* Dimensões, suavização e estilização da base do card de login */
-#container {
-  width: 50vw;
-  height: 70vh;
-  background-color: white;
+.loginContainer {
+  width: 100%;
+  max-width: 900px;
+  height: 550px;
+  background-color: #ffffff;
   display: flex;
   border-radius: 23px;
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
+  overflow: hidden; /* Garante que os cantos arredondados cortem o fundo do lado azul */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Efeito de flutuação e sombra projetada ao passar o mouse no card */
-#container:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+.loginContainer:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
 }
 
-/* Definição da área esquerda do card reservada para as inserções de login */
-#login {
-  width: 25vw;
+/* -----------------------------------------
+   LADO ESQUERDO: ÁREA DO FORMULÁRIO
+----------------------------------------- */
+.loginFormSection {
+  width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
+  padding: 30px;
 }
 
-/* Configurações de proporção máxima para as imagens e logo */
-img {
-  width: 100%;
-  max-width: 250px;
-  max-height: 250px;
-}
-
-/* Bloco superior reservado para a exibição da logo marca */
-#logo {
+.loginLogoFrame {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 35%;
+  height: 30%;
+  margin-bottom: 10px;
 }
 
-/* Bloco inferior que encapsula o formulário de entrada */
-#entrar {
+.loginLogo {
   width: 100%;
-  height: 65%;
+  max-width: 160px;
+  height: auto;
 }
 
-/* Estruturação vertical interna dos campos do formulário */
-form {
+.loginFormWrapper {
+  width: 100%;
+  height: 70%;
+}
+
+.authForm {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -93,97 +90,117 @@ form {
   width: 100%;
 }
 
-/* Margem de distanciamento abaixo do título de entrada */
-#tituloEntrar {
-  margin-bottom: 30px;
+.authFormTitle {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--cor-black);
+  margin-bottom: 25px;
 }
 
-/* Estilização e peso visual padrão para as tags de link */
-a {
+/* Customização visual dos campos de digitação */
+.authInput {
+  border: 1px solid #e0e0e0;
+  background-color: #fcfcfc;
+  margin-bottom: 16px;
+  width: 80%;
+  padding: 12px 16px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  border-radius: 11px;
+  outline: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.authInput:focus,
+.authInput:hover {
+  border-color: var(--cor-blue);
+  box-shadow: 0 4px 12px rgba(1, 114, 208, 0.15);
+}
+
+/* Links de recuperação */
+.forgotPasswordLink {
   color: var(--cor-blue);
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 500;
+  font-size: 0.85rem;
+  margin-top: 5px;
+  transition: text-decoration 0.2s;
 }
 
-/* Linha decorativa sublinhada ao passar o mouse sobre um link */
-a:hover {
+.forgotPasswordLink:hover {
   text-decoration: underline;
 }
 
-/* Área direita com formato arredondado estilizado para novos cadastros */
-#cadastre-se {
-  width: 25vw;
+/* -----------------------------------------
+   LADO DIREITO: ÁREA DE CADASTRO
+----------------------------------------- */
+.loginWelcomeSection {
+  width: 50%;
   background-color: var(--cor-blue);
-  color: white;
+  color: #ffffff;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-top-left-radius: 30%;
-  border-top-right-radius: 20px;
-  border-bottom-left-radius: 30%;
-  border-bottom-right-radius: 20px;
+  padding: 40px;
+  text-align: center;
+  border-top-left-radius: 25%;
+  border-bottom-left-radius: 25%;
 }
 
-/* Margens externas aplicadas aos blocos de textos informativos */
-#paragrafos {
-  margin: 30px 10px;
+.welcomeTitle {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 15px;
 }
 
-/* Customização visual base dos campos de digitação textuais */
-input {
-  border: 1px solid var(--cor-black);
-  margin-bottom: 20px;
-  width: 77%;
-  padding: 12px;
-  font-size: 16px;
-  border-radius: 11px;
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
+.welcomeText {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  max-width: 280px;
 }
 
-/* Efeito de flutuação e brilho neon azulado no hover dos inputs */
-input:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 10px 20px #a0c9eb;
-}
-
-/* Customização visual e preenchimento interno do botão de login */
-.btn-entrar {
-  background-color: var(--cor-blue);
-  color: var(--cor-white);
-  font-size: 18px;
-  margin-top: 30px;
-  padding: 8px;
-  width: 40%;
-  border-radius: 15px;
+/* -----------------------------------------
+   BOTÕES DE AÇÃO (ESTILO UNIFICADO)
+----------------------------------------- */
+.btnAuth {
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 10px 24px;
+  width: 50%;
+  border-radius: 50px;
   cursor: pointer;
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
 }
 
-/* Alteração de cor, elevação e sombra no hover do botão de login */
-.btn-entrar:hover {
+/* Botão Entrar */
+.btnEntrar {
+  background-color: var(--cor-blue);
+  color: #ffffff;
+  margin-top: 25px;
+}
+
+.btnEntrar:hover {
   background-color: #1987e0;
   transform: translateY(-2px);
-  box-shadow: 0 10px 20px #a0c9eb;
+  box-shadow: 0 6px 15px rgba(1, 114, 208, 0.3);
 }
 
-/* Estilização do botão com contorno claro para redirecionamento de registro */
-.btn-registrar {
-  background-color: var(--cor-blue);
-  color: var(--cor-white);
-  border: 1px solid var(--cor-white);
-  border-radius: 15px;
-  font-size: 18px;
-  padding: 8px;
-  width: 40%;
-  cursor: pointer;
+/* Botão Ir para Registro */
+.btnRedirectRegister {
+  background-color: transparent;
+  color: #ffffff;
+  border: 2px solid #ffffff;
 }
 
-/* Escurecimento sutil do fundo no hover do botão de registro */
-.btn-registrar:hover {
-  background-color: #0f7fdc;
+.btnRedirectRegister:hover {
+  background-color: #ffffff;
+  color: var(--cor-blue);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }

@@ -5,22 +5,37 @@
   box-sizing: border-box;
 }
 
-/* Definição da identidade visual e tipografia do corpo do site */
 body {
   font-family: "Poppins", sans-serif;
+  background-color: #ffffff;
+  color: #333333;
 }
 
-/* Estruturação da barra de navegação principal */
-nav {
+/* -----------------------------------------
+   BARRA DE NAVEGAÇÃO (NAV)
+----------------------------------------- */
+.mainNav {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 15px;
   position: relative;
-  
 }
 
-/* Estilização do menu em formato de pílula e seus links */
+.logoLink {
+  position: absolute;
+  left: 50px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8%;
+  display: inline-block;
+}
+
+.logoImage {
+  width: 100%;
+  height: auto;
+}
+
 .navMenu {
   display: flex;
   justify-content: center;
@@ -31,14 +46,21 @@ nav {
   padding: 5px 55px;
   gap: clamp(1rem, 3vw, 4rem);
   background: transparent;
- 
 }
-a.navLink {
+
+.navLink {
   text-decoration: none;
   color: inherit;
+  font-size: 1rem;
 }
-/* Configuração do item de menu ativo (referência para o balão) */
-.navLinkActive {
+
+.loginAction {
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+/* Configuração do item de menu ativo */
+.navLink.active {
   text-align: center;
   position: relative;
   padding: 6px 30px;
@@ -47,11 +69,9 @@ a.navLink {
   justify-content: center;
   z-index: 1;
   color: rgb(255, 255, 255);
-   text-decoration: none;
 }
 
-/* Criação do efeito de balão azul por trás do link ativo */
-.navLinkActive::before {
+.navLink.active::before {
   content: "";
   position: absolute;
   top: 0;
@@ -62,10 +82,33 @@ a.navLink {
   border-radius: 50px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
   z-index: -1;
-  text-decoration: none;
 }
 
-/* Posicionamento e dimensões do ícone do carrinho de compras */
+/* Área de login */
+.loginWidget {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  right: 230px;
+}
+
+.loginText {
+  font-size: 15px;
+  text-align: right;
+  margin-right: 15px;
+}
+
+.loginText a {
+  text-decoration: none;
+  color: black;
+}
+
+.loginIcon img {
+  height: 35px;
+  width: auto;
+}
+
+/* Carrinho de Compras */
 .cartIcon {
   width: 25px;
   height: auto;
@@ -74,23 +117,10 @@ a.navLink {
   right: 171px;
 }
 
-/* Reset visual padrão de todos os links do documento */
-.authLinks {
-  text-decoration: none;
-  color: black;
-}
-
-/* Posicionamento fixo e proporções do logotipo (Pear) */
-#pear {
-  position: absolute;
-  left: 50px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 8%;
-}
-
-/* Configurações de dimensão, corte e centralização do banner principal */
-img#headerBanner {
+/* -----------------------------------------
+   BANNER DO HEADER
+----------------------------------------- */
+.headerBanner {
   display: block;
   width: 80%;
   max-width: 1400px;
@@ -100,146 +130,164 @@ img#headerBanner {
   margin: 40px auto 0 auto;
 }
 
-/* Alinhamento e espaçamento interno da seção de promoções */
-#promoTitle {
+/* -----------------------------------------
+   GALERIA DE PROMOÇÕES
+----------------------------------------- */
+.sectionTitle {
   text-align: center;
   padding: 45px;
 }
 
-.productTitle {
-  font-size: 1rem;
-  font-weight: medium;
-  margin-top: 4rem;
-  display: flex;
-}
-.productTitle a {
-  text-decoration: none;
-  color: black;
-  display: inline-flex;
-}
-
-/* Estilização base das imagens dos blocos de produtos */
-.productImage {
-  width: 100%;
-  max-width: 245px;
-  height: auto;
-  transition: transform 0.3s ease;
-  margin-right: 50px;
-}
-
-/* Efeito de flutuação ao passar o mouse */
-.productImage:hover {
-  transform: translateY(-10px);
-  cursor: pointer;
-}
-
-/* Alinhamento horizontal e espaçamento adaptável da galeria de produtos */
-#promoGallery {
-  display: flex;
-  gap: clamp(40px, 3vw, 100px);
-  margin-left: 50px;
-}
-
-/* Container de fundo da galeria de produtos */
-#galleryContainer {
+.galleryContainer {
   background: #ffffff;
   padding: 50px;
   display: flex;
   justify-content: center;
 }
 
+.promoGallery {
+  display: flex;
+  gap: clamp(40px, 3vw, 100px);
+  flex-wrap: wrap; /* Permite quebrar linha caso falte espaço */
+  justify-content: center;
+}
+
+.productCard {
+  max-width: 245px;
+  display: flex;
+  flex-direction: column;
+}
+
+.productImage {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+  margin-bottom: 15px;
+}
+
+.productImage:hover {
+  transform: translateY(-10px);
+  cursor: pointer;
+}
+
+.productTitle {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.productDescription {
+  font-size: 0.9rem;
+  color: #666666;
+  margin-bottom: 15px;
+}
+
+.priceLabel {
+  font-size: 0.85rem;
+  color: #888888;
+}
+
 .oldPrice {
   color: red;
   font-size: 1.2rem;
   text-decoration: line-through;
+  margin-bottom: 5px;
 }
 
 .newPrice {
   color: rgb(4, 139, 4);
   font-size: 1.5rem;
-  font-weight: medium;
+  font-weight: 600;
 }
 
-/* Seção de destaque com fundo degradê azul */
-#ctaSection {
+/* -----------------------------------------
+   SEÇÃO CALL TO ACTION (CTA)
+----------------------------------------- */
+.ctaSection {
   display: flex;
   justify-content: space-between;
   align-items: center;
   background: linear-gradient(to bottom, #5eacff, #0172d0);
   color: white;
   width: 100%;
-  height: 500px;
+  min-height: 500px;
   padding: 50px;
   margin: 150px auto;
 }
 
-/* Caixinha de texto com efeito translúcido (Glassmorphism corrigido) */
-#contactTag {
-  background: rgba(1, 114, 208, 0.27);
-  border: 1px solid #0172d0;
-  border-radius: 16px;
-  padding: 10px;
-  color: #ffffff;
-  width: 18%;
-  font-size: 14px;
-  text-align: center;
-}
-
-/* Bloco estrutural para organizar parágrafos em colunas */
-.ctaAction {
+.ctaContent {
+  width: 50%;
   display: flex;
   flex-direction: column;
-  gap: 5px;
-  width: 40%;
+  gap: 20px;
 }
 
-/* Container em formato de cápsula */
-#ctaSection {
-
-  background-color: white;
-  border-radius: 50px;
-  justify-content: space-between;
-  padding: 7px;
-  margin-top: 30px;
-  display: flex;
-  justify-content: center; /* Centraliza horizontalmente */
+.ctaTag {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid #ffffff;
+  border-radius: 16px;
+  padding: 8px 15px;
+  color: #ffffff;
+  font-size: 14px;
+  width: max-content;
 }
 
-/* Customização do texto escuro dentro da cápsula */
-#spaceWhite {
-  text-align: center;
-  color: rgb(255, 255, 255);
-  margin-top: 60px;
+.ctaTitle {
+  font-size: 2.5rem;
+  line-height: 1.2;
+}
+
+.ctaText {
   font-size: 1.1rem;
-  padding-left: 500px;
+  opacity: 0.9;
 }
 
-/* Botão em formato de pílula azul para ações principais */
-#spaceBlue {
-  color: white;
-  font-size: 15px;
-  background-color: #1f77d6;
+.ctaActionBox {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.ctaActionText {
+  color: #ffffff;
+  font-size: 1.1rem;
+}
+
+.ctaButton {
+  color: #1f77d6;
+  font-size: 16px;
+  font-weight: 600;
+  background-color: white;
+  border: none;
   border-radius: 30px;
-  padding: 10px;
+  padding: 12px 25px;
   cursor: pointer;
-  width: 300px;
-  transition: background-color 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+  width: max-content;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Efeito visual no hover do botão azul */
-#spaceBlue:hover {
-  background-color: #0172d0;
-  box-shadow: 0 6px 3px rgba(0, 0, 0, 0.2);
+.ctaButton:hover {
+  background-color: #f0f0f0;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Proporções da imagem do notebook */
-#note {
+.ctaImageWrapper {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+}
+
+.ctaImage {
   height: auto;
-  width: 70%;
+  width: 100%;
+  max-width: 400px;
 }
 
-/* Estruturação e estilização da área do rodapé do site */
-footer {
+/* -----------------------------------------
+   RODAPÉ (FOOTER)
+----------------------------------------- */
+.mainFooter {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -250,49 +298,55 @@ footer {
   padding: 50px;
 }
 
-/* Reset de margens e distribuição uniforme das listas do rodapé */
+.footerColumn {
+  flex: 1;
+  padding: 0 20px;
+}
+
+.footerLogo {
+  width: 150px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.footerText {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.footerHighlight {
+  font-size: 1rem;
+}
+
+.footerTitle {
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+  position: relative;
+}
+
 .footerList {
   list-style: none;
   padding: 0;
-  flex: 1;
 }
 
-/* Espaçamento vertical entre os links do rodapé */
 .footerList li {
-  padding: 10px 0;
+  padding: 8px 0;
+  font-size: 0.95rem;
 }
 
-/* Estilo padrão e transição dos links do rodapé */
 .footerList li a {
   text-decoration: none;
   color: #ffffff;
   transition: color 0.3s ease;
 }
 
-/* Mudança de cor suave ao passar o mouse */
 .footerList li a:hover {
   color: #cccccc;
 }
 
-/* Configuração de largura e respiro lateral para as colunas do rodapé */
-.footerColumn {
-  flex: 1;
-  padding: 0px 20px;
-}
-
-/* Posicionamento do ícone de login */
-#loginIcon {
-  display: flex;
-  position: absolute;
-  margin-top: -20px;
-  margin-left: 210px;
-  height: 55%;
-}
-
-/* Alinhamento e tamanho do texto explicativo de login */
-#textLogin {
-  position: absolute;
-  padding-left: 260px;
-  margin-top: -22px;
-  font-size: 15px;
+.paymentImage {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
 }

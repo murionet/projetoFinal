@@ -1,59 +1,63 @@
 <!doctype html>
-
 <html lang="pt-br">
   <head>
-    <title>Cadastro</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/cadastro.css" />
-    <script src="/js/main.js"></script>
+    <title>Pear Brasil - Cadastro</title>
+    <link rel="stylesheet" href="../css/cadastro.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <script defer src="../js/main.js"></script>
   </head>
 
   <body>
-    <main>
-      <div id="container">
-        <div id="branding">
-          <div id="texto">
-            <h1>Welcome to <span>Pear!</span></h1>
+    <main class="registerMain">
+      <div class="registerContainer" id="container">
+        <div class="registerWelcomeSection" id="branding">
+          <div class="welcomeContentWrapper">
+            <h1 class="welcomeTitle">
+              Welcome to <span class="brandHighlight">Pear!</span>
+            </h1>
+            <p class="welcomeSubtitle">Sua tecnologia, do seu jeito.</p>
 
-            <p class="paragrafos">Sua tecnologia, do seu jeito.</p>
-
-            <p class="paragrafos">
-              Acesse sua conta para explorar nossos produtos, acompanhar
-              <br />
-              pedidos e aproveitar uma experiência prática e segura na Pear,
-              <br />
-              Estamos prontos para conectar você às melhores soluções em
-              <br />
-              eletrônicos.
+            <p class="welcomeText">
+              Acesse sua conta para explorar nossos produtos, acompanhar pedidos
+              e aproveitar uma experiência prática e segura na Pear. Estamos
+              prontos para conectar você às melhores soluções em eletrônicos.
             </p>
 
-            <h2>Faça login ao lado para acessar nossos produtos</h2>
+            <h3 class="welcomeFooterNote">
+              Faça login ao lado para acessar nossos produtos
+            </h3>
           </div>
 
-          <div id="imagem">
+          <div class="welcomeImageFrame" id="imagem">
             <img
-              src="/assets/login/assets/pear-removebg-preview copy.png"
-              alt=""
+              src="../assets/login/assets/pear-logo-nobg.png"
+              alt="Logo Pear"
+              class="registerLogoImage"
               id="image-pear"
             />
           </div>
         </div>
 
-        <div id="formulario">
-          <div id="text-forms">
-            <h1>Cadastre-se</h1>
-
-            <h2>
-              Já possui uma conta?<a href="/projetoFinal/html/login.html">
-                &gt; Faça login &lt;</a
+        <div class="registerFormSection" id="formulario">
+          <div class="formHeaderFrame" id="text-forms">
+            <h2 class="authFormTitle">Cadastre-se</h2>
+            <h4 class="authFormSubtitle">
+              Já possui uma conta?
+              <a class="loginRedirectLink" href="../pages/login.html"
+                >Faça login</a
               >
-            </h2>
+            </h4>
           </div>
 
-          <div id="forms">
-            <form id="form">
+          <div class="registerFormWrapper" id="forms">
+            <form class="authForm" id="form" onsubmit="cadastroNaPagina(event)">
               <input
+                class="authInput"
                 type="text"
                 name="usuario"
                 id="usuario"
@@ -62,6 +66,7 @@
               />
 
               <input
+                class="authInput"
                 type="text"
                 name="sobrenome"
                 id="sobrenome"
@@ -70,7 +75,8 @@
               />
 
               <input
-                type="text"
+                class="authInput"
+                type="email"
                 name="email"
                 id="email"
                 placeholder="E-mail"
@@ -78,6 +84,7 @@
               />
 
               <input
+                class="authInput"
                 type="password"
                 name="senha"
                 id="senha"
@@ -85,7 +92,7 @@
                 required
               />
 
-              <button type="submit" onclick="cadastroNaPagina(event)">
+              <button type="submit" class="btnAuth btnRegisterAction">
                 Cadastrar
               </button>
             </form>

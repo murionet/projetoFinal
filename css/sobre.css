@@ -5,13 +5,16 @@
   box-sizing: border-box;
 }
 
-/* Definição da identidade visual e tipografia do corpo do site */
 body {
   font-family: "Poppins", sans-serif;
+  background-color: #ffffff;
+  color: #333333;
 }
 
-/* Estruturação e alinhamento da barra de navegação principal */
-nav {
+/* -----------------------------------------
+   BARRA DE NAVEGAÇÃO (NAV)
+----------------------------------------- */
+.mainNav {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -19,8 +22,21 @@ nav {
   position: relative;
 }
 
-/* Estilização do menu em formato de pílula e espaçamento dos links */
-.nav-list {
+.logoLink {
+  position: absolute;
+  left: 50px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8%;
+  display: inline-block;
+}
+
+.logoImage {
+  width: 100%;
+  height: auto;
+}
+
+.navMenu {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -32,9 +48,14 @@ nav {
   background: transparent;
 }
 
-/* Configuração do item de menu ativo (referência para o balão) */
-li.active {
-  color: rgb(255, 255, 255) !important;
+.navLink {
+  text-decoration: none;
+  color: black;
+  font-size: 1rem;
+}
+
+/* Estado ativo do menu (Página Sobre Atual) */
+.navLink.active {
   text-align: center;
   position: relative;
   padding: 6px 30px;
@@ -42,10 +63,10 @@ li.active {
   align-items: center;
   justify-content: center;
   z-index: 1;
+  color: rgb(255, 255, 255);
 }
 
-/* Criação do efeito de balão azul por trás do link ativo */
-li.active::before {
+.navLink.active::before {
   content: "";
   position: absolute;
   top: 0;
@@ -58,8 +79,33 @@ li.active::before {
   z-index: -1;
 }
 
-/* Posicionamento fixo e dimensões do ícone do carrinho de compras */
-.carrinho {
+/* Área de login */
+.loginWidget {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  right: 230px;
+}
+
+.loginText {
+  font-size: 15px;
+  text-align: right;
+  margin-right: 15px;
+  line-height: 1.3;
+}
+
+.loginAction {
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.loginIcon img {
+  height: 35px;
+  width: auto;
+}
+
+/* Carrinho de Compras */
+.cartIcon {
   width: 25px;
   height: auto;
   cursor: pointer;
@@ -67,28 +113,70 @@ li.active::before {
   right: 171px;
 }
 
-/* Estilo para destacar o elemento da página atual */
-#atual {
-  color: rgb(255, 255, 255);
+/* -----------------------------------------
+   CONTEÚDO DA PÁGINA SOBRE
+----------------------------------------- */
+.aboutContainer {
+  display: flex;
+  justify-content: center;
+  padding: 80px 50px;
 }
 
-/* Reset visual padrão de todos os links do documento */
-.links {
-  text-decoration: none;
-  color: black;
+.aboutContent {
+  display: flex;
+  align-items: center;
+  max-width: 1200px;
+  gap: 80px;
 }
 
-/* Posicionamento fixo e proporções do logotipo (Pear) */
-#pear {
-  position: absolute;
-  left: 50px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 8%;
+.aboutText {
+  width: 55%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-/* Estruturação, cores e espaçamento da área do rodapé */
-footer {
+.aboutTitle {
+  font-size: 2.8rem;
+  color: #0172d0;
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+
+.aboutParagraph {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #444444;
+  text-align: justify;
+}
+
+.highlightText {
+  font-weight: 500;
+  color: #0172d0;
+}
+
+.aboutImageWrapper {
+  width: 45%;
+}
+
+.aboutImage {
+  width: 100%;
+  height: auto;
+  border-radius: 35px;
+  box-shadow: 0 8px 20px rgba(20, 50, 75, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efeito de flutuação suave na imagem */
+.aboutImage:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0, 57, 104, 0.3);
+}
+
+/* -----------------------------------------
+   RODAPÉ (FOOTER)
+----------------------------------------- */
+.mainFooter {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -99,74 +187,54 @@ footer {
   padding: 50px;
 }
 
-/* Seletor corrigido para classe: Remove marcadores e distribui as listas do rodapé */
-.footer-lista {
+.footerColumn {
+  flex: 1;
+  padding: 0 20px;
+}
+
+.footerLogo {
+  width: 150px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.footerText {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.footerHighlight {
+  font-size: 1rem;
+}
+
+.footerTitle {
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+}
+
+.footerList {
   list-style: none;
   padding: 0;
-  flex: 1;
 }
 
-/* Espaçamento vertical entre os itens de link do rodapé */
-.footer-lista li {
-  padding: 10px 0;
+.footerList li {
+  padding: 8px 0;
+  font-size: 0.95rem;
 }
 
-/* Estilo padrão e transição de cor para os links do rodapé */
-.footer-lista li a {
+.footerList li a {
   text-decoration: none;
   color: #ffffff;
   transition: color 0.3s ease;
 }
 
-/* Alteração de cor suave ao passar o mouse sobre os links do rodapé */
-.footer-lista li a:hover {
+.footerList li a:hover {
   color: #cccccc;
 }
 
-/* Configuração de largura uniforme e respiro lateral para as colunas do rodapé */
-.coluna {
-  flex: 1;
-  padding: 0px 20px;
-}
-
-/* Container principal da aba Sobre para alinhar imagem e texto lado a lado */
-#container {
-  display: flex;
-  align-items: start;
-  padding: 105px;
-  gap: 100px;
-}
-
-/* Estilização padrão, bordas e sombra da foto da seção Sobre */
-#foto-sobre {
-  width: 45%;
+.paymentImage {
+  width: 100%;
+  max-width: 300px;
   height: auto;
-  border-radius: 35px;
-  box-shadow: 0 5px 10px #14324b;
-}
-
-/* Efeito de leve flutuação e ajuste de sombra ao passar o mouse sobre a foto */
-#foto-sobre:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 5px 10px #003968;
-  width: 45%;
-  height: auto;
-  border-radius: 35px;
-}
-
-/* Posicionamento do ícone de login na barra de navegação */
-#loginIcon {
-  display: flex;
-  position: absolute;
-  margin-top: -20px;
-  margin-left: 120px;
-  height: 55%;
-}
-
-/* Alinhamento, distanciamento e tamanho do texto descritivo de login */
-#textLogin {
-  position: absolute;
-  padding-left: 170px;
-  margin-top: -22px;
-  font-size: 15px;
 }

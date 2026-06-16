@@ -1,13 +1,12 @@
 <!doctype html>
-
 <html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pear Brasil</title>
+    <title>Pear Brasil - Contato</title>
     <link rel="stylesheet" href="../css/contato.css" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
     <link
@@ -16,101 +15,174 @@
       type="image/x-icon"
     />
   </head>
-
   <body>
-    <nav>
-      <a href="/projetoFinal/index.html"
-        ><img id="pear" src="../assets/perlogo-nobg.png" alt=""
-      /></a>
+    <!-- BARRA DE NAVEGAÇÃO -->
+    <nav class="mainNav">
+      <a href="../index.html" class="logoLink">
+        <img
+          class="logoImage"
+          src="../assets/perlogo-nobg.png"
+          alt="Logo da Pear"
+        />
+      </a>
 
-      <ul class="nav-list">
-        <li><a class="links" href="../index.html">Início</a></li>
-        <li><a class="links" href="../pages/produtos.html">Produtos</a></li>
-        <li><a class="links" href="../pages/sobre.html">Sobre</a></li>
-        <li class="active">
-          <a id="atual" class="links" href="../pages/contato.html">Contato</a>
+      <ul class="navMenu">
+        <li><a class="navLink" href="../index.html">Início</a></li>
+        <li><a class="navLink" href="../pages/produtos.html">Produtos</a></li>
+        <li><a class="navLink" href="../pages/sobre.html">Sobre</a></li>
+        <li>
+          <a
+            class="navLink active"
+            aria-current="page"
+            href="../pages/contato.html"
+            >Contato</a
+          >
         </li>
       </ul>
+
+      <div class="loginWidget">
+        <div class="loginText">
+          <a class="navLink loginAction" href="/pages/login.html">Entrar</a>
+          ou <br />
+          <a class="navLink loginAction" href="/pages/cadastro.html"
+            >Cadastre-se</a
+          >
+        </div>
+        <div class="loginIcon">
+          <img src="../assets/icon.png" alt="Ícone de login" />
+        </div>
+      </div>
+
+      <img
+        class="cartIcon"
+        src="../assets/carrinho-header.png"
+        alt="Carrinho de compras"
+      />
     </nav>
 
-    <header></header>
-
-    <main>
-      <div id="container-contato">
-        <div id="textosExternos">
-          <h1 id="titulo">
-            Entrar em <br />
-            contato
-          </h1>
-
-          <h2 id="subtitulo">
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="contactMain">
+      <div class="contactContainer">
+        <div class="contactHeader">
+          <h1 class="contactTitle">Entrar em<br />contato</h1>
+          <h2 class="contactSubtitle">
             Estamos ansiosos para atender à sua solicitação.
           </h2>
         </div>
 
-        <div id="msg-contato">
-          <div id="form-contato">
-            <div id="telefones">
-              <img
-                class="images-contato"
-                src="/project-senai/assets/images-contato/location.png"
-                alt=""
-              />
-              <h1>
-                Alameda Wagih Salles Nemer, 124 - Centro, Barueri - SP,
-                06401-134
-              </h1>
-              <h2>Edifício Sede Pear</h2>
+        <div class="contactCardBox">
+          <div class="contactInnerForm">
+            <!-- Informações de Atendimento Lateral -->
+            <div class="infoSidebar">
+              <div class="infoBlock">
+                <h4 class="infoDetail">
+                  Alameda Wagih Salles Nemer, 124 - Centro, Barueri - SP,
+                  06401-134
+                </h4>
+                <p class="infoLabel">Edifício Sede Pear</p>
+              </div>
 
-              <img
-                class="images-contato"
-                src="/project-senai/assets/images-contato/phone.png"
-                alt=""
-              />
-              <h1>(11) 3322-0067</h1>
-              <h2>Central de atendimento</h2>
+              <div class="infoBlock">
+                <h4 class="infoDetail">(11) 3322-0067</h4>
+                <p class="infoLabel">Central de atendimento</p>
+              </div>
 
-              <img
-                class="images-contato"
-                src="/project-senai/assets/images-contato/mail.png"
-                alt=""
-              />
-              <h1>pearbrasil@pear.com</h1>
-              <h2>E-mail corporativo</h2>
+              <div class="infoBlock">
+                <h4 class="infoDetail">pearbrasil@pear.com</h4>
+                <p class="infoLabel">E-mail corporativo</p>
+              </div>
             </div>
 
-            <form action="">
-              <label for="nome">Nome</label>
-              <input type="text" name="nome" id="nome" placeholder="Seu nome" />
-
-              <label for="email">Email</label>
+            <!-- Formulário de Mensagem -->
+            <form class="contactForm" action="#" method="POST">
+              <label class="formLabel" for="nome">Nome</label>
               <input
+                class="formInput"
+                type="text"
+                name="nome"
+                id="nome"
+                placeholder="Seu nome"
+                required
+              />
+
+              <label class="formLabel" for="email">Email</label>
+              <input
+                class="formInput"
                 type="email"
                 name="email"
                 id="email"
                 placeholder="Seu email"
+                required
               />
 
-              <label for="assunto">Assunto</label>
+              <label class="formLabel" for="assunto">Assunto</label>
               <input
+                class="formInput"
                 type="text"
                 name="assunto"
                 id="assunto"
                 placeholder="Assunto"
+                required
               />
 
-              <label for="btn-msg">Mensagem</label>
+              <label class="formLabel" for="msg">Mensagem</label>
               <textarea
-                name="btn-msg"
-                id="btn-msg"
-                placeholder="Mensagem"
+                class="formTextarea"
+                name="msg"
+                id="msg"
+                placeholder="Sua mensagem..."
+                required
               ></textarea>
 
-              <button type="submit">Enviar</button>
+              <button class="formButton" type="submit">Enviar</button>
             </form>
           </div>
         </div>
       </div>
     </main>
+
+    <!-- RODAPÉ -->
+    <footer class="mainFooter">
+      <div class="footerColumn">
+        <img class="footerLogo" src="../assets/pearlogo-footer.png" alt="Logo Pear" />
+        <p class="footerText">
+          Tecnologia inteligente para o seu dia a dia. Produtos de qualidade,
+          inovação e confiança em um só lugar.
+        </p>
+        <p class="footerHighlight">
+          <strong>Tecnologia da forma que você nunca viu.</strong>
+        </p>
+      </div>
+
+      <div class="footerColumn">
+        <h3 class="footerTitle">Categorias</h3>
+        <ul class="footerList">
+          <li><a href="../index.html">Início</a></li>
+          <li><a href="../pages/produtos.html">Produtos</a></li>
+          <li><a href="../pages/sobre.html">Sobre</a></li>
+          <li><a href="../pages/contato.html">Contato</a></li>
+        </ul>
+      </div>
+
+      <div class="footerColumn">
+        <h3 class="footerTitle">Atendimento</h3>
+        <ul class="footerList">
+          <li>Fale conosco</li>
+          <li>Suporte técnico</li>
+          <li>Política de devolução</li>
+          <li>Garantia</li>
+          <li>FAQ</li>
+        </ul>
+      </div>
+
+      <div class="footerColumn">
+        <h3 class="footerTitle">Formas de Pagamento</h3>
+        <img
+          class="paymentImage"
+          src="../assets/payments-footer.png"
+          alt="Formas de pagamento"
+        />
+      </div>
+    </footer>
   </body>
 </html>

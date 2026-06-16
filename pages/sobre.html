@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pear Brasil</title>
+    <title>Pear Brasil - Sobre</title>
     <link rel="stylesheet" href="../css/sobre.css" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
     <link
@@ -16,110 +16,115 @@
     />
   </head>
   <body>
-    <nav>
-      <a href="../index.html"
-        ><img id="pear" src="../assets/perlogo-nobg.png" alt="Logo da Pear"
-      /></a>
-      <ul class="nav-list">
-        <li><a class="links" href="../index.html">Início</a></li>
-        <li><a class="links" href="../pages/produtos.html">Produtos</a></li>
-        <li class="active">
-          <a id="atual" class="links" href="../pages/sobre.html">Sobre</a>
-        </li>
-        <li><a class="links" href="../pages/contato.html">Contato</a></li>
-      </ul>
-      <div id="loginSection">
-        <div id="textLogin">
-          <strong
-            ><u><a class="links" href="/pages/login.html">Entrar</a></u></strong
+    <nav class="mainNav">
+      <a href="../index.html" class="logoLink">
+        <img
+          class="logoImage"
+          src="../assets/perlogo-nobg.png"
+          alt="Logo da Pear"
+        />
+      </a>
+
+      <ul class="navMenu">
+        <li><a class="navLink" href="../index.html">Início</a></li>
+        <li><a class="navLink" href="../pages/produtos.html">Produtos</a></li>
+        <li>
+          <a
+            class="navLink active"
+            aria-current="page"
+            href="../pages/sobre.html"
+            >Sobre</a
           >
+        </li>
+        <li><a class="navLink" href="../pages/contato.html">Contato</a></li>
+      </ul>
+
+      <div class="loginWidget">
+        <div class="loginText">
+          <a class="navLink loginAction" href="/pages/login.html">Entrar</a>
           ou <br />
-          <strong
-            ><u
-              ><a class="links" href="/pages/cadastro.html">Cadastre-se</a></u
-            ></strong
+          <a class="navLink loginAction" href="/pages/cadastro.html"
+            >Cadastre-se</a
           >
         </div>
-        <div id="loginIcon">
+        <div class="loginIcon">
           <img src="../assets/icon.png" alt="Ícone de login" />
         </div>
       </div>
+
       <img
-        class="carrinho"
+        class="cartIcon"
         src="../assets/carrinho-header.png"
         alt="Carrinho de compras"
       />
     </nav>
 
-    <header>
-      <div id="container">
-        <div id="texto-sobre">
-          <h1>
+    <main class="aboutContainer">
+      <section class="aboutContent">
+        <div class="aboutText">
+          <h1 class="aboutTitle">
             Olá! <br />
             Nós somos a Pear Ponto!
           </h1>
-          <br />
-          <p>
-            Somos um grupo de de empresários que surgiu em maio de 2026, boas
-            práticas e acessibilidade aos nossos clientes.
+          <p class="aboutParagraph">
+            Somos um grupo de empresários que surgiu em maio de 2026, focados em
+            boas práticas e acessibilidade aos nossos clientes.
           </p>
-          <br />
-          <p>
+          <p class="aboutParagraph">
             Trabalhamos para oferecer os melhores produtos e soluções para
             pessoas, empresas e entusiastas que buscam qualidade, desempenho e
-            confiança. Nosso objetivo é tornar a tecnologia mais acessível,
+            confiança. Nosso objective é tornar a tecnologia mais acessível,
             disponibilizando uma ampla variedade de equipamentos, acessórios e
             componentes de informática, com preços competitivos e atendimento de
             excelência.
           </p>
-          <br />
-          <p>
+          <p class="aboutParagraph">
             Aqui você encontra desde computadores, notebooks e periféricos até
             peças para upgrades, redes, armazenamento e muito mais. Selecionamos
             cuidadosamente nossos produtos para garantir qualidade, durabilidade
             e as melhores marcas do mercado.
           </p>
-          <br />
-          <br />
-          <p>
+          <p class="aboutParagraph highlightText">
             Obrigado por escolher nossa loja. Estamos prontos para conectar você
             ao melhor da tecnologia!
           </p>
         </div>
-        <img
-          id="foto-sobre"
-          src="../assets/sobre/pcmontagem-about.png"
-          alt="Homem montando computador"
-        />
-      </div>
-    </header>
 
-    <footer>
-      <div class="coluna">
-        <img src="assets/Group 4.png" alt="" width="200px" />
-        <br />
-        <br />
-        <p>
+        <div class="aboutImageWrapper">
+          <img
+            class="aboutImage"
+            src="../assets/sobre/pcmontagem-about.png"
+            alt="Homem montando computador"
+          />
+        </div>
+      </section>
+    </main>
+
+    <footer class="mainFooter">
+      <div class="footerColumn">
+        <img class="footerLogo" src="../assets/pearlogo-footer.png" alt="Logo Pear" />
+        <p class="footerText">
           Tecnologia inteligente para o seu dia a dia. Produtos de qualidade,
           inovação e confiança em um só lugar.
         </p>
-        <br />
-        <p><strong>Tecnologia da forma que você nunca viu.</strong></p>
+        <p class="footerHighlight">
+          <strong>Tecnologia da forma que você nunca viu.</strong>
+        </p>
       </div>
 
-      <div class="coluna">
-        <ul class="footer-lista">
-          <h1 class="titulos">Categorias</h1>
-          <li><a href="index.html">Início</a></li>
+      <div class="footerColumn">
+        <h3 class="footerTitle">Categorias</h3>
+        <ul class="footerList">
+          <li><a href="../index.html">Início</a></li>
           <li><a href="/pages/produtos.html">Produtos</a></li>
           <li><a href="/pages/sobre.html">Sobre</a></li>
           <li><a href="/pages/contato.html">Contato</a></li>
         </ul>
       </div>
 
-      <div class="coluna">
-        <ul class="footer-lista">
-          <h1 class="titulos">Atendimento</h1>
+      <div class="footerColumn">
+        <h3 class="footerTitle">Atendimento</h3>
+        <ul class="footerList">
           <li>Fale conosco</li>
           <li>Suporte técnico</li>
           <li>Política de devolução</li>
@@ -128,13 +133,12 @@
         </ul>
       </div>
 
-      <div class="coluna">
-        <h1 class="titulos">Formas de Pagamento</h1>
+      <div class="footerColumn">
+        <h3 class="footerTitle">Formas de Pagamento</h3>
         <img
-          class="titulos"
+          class="paymentImage"
           src="../assets/payments-footer.png"
           alt="Formas de pagamento"
-          width="300px"
         />
       </div>
     </footer>

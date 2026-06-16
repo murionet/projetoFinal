@@ -1,74 +1,77 @@
 <!doctype html>
-
 <html lang="pt-br">
   <head>
-    <title>Login</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/login.css" />
-    <script src="/js/main.js"></script>
+    <title>Pear Brasil - Login</title>
+    <link rel="stylesheet" href="../css/login.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <script defer src="../js/main.js"></script>
   </head>
 
   <body>
-    <main>
-      <div id="container">
-        <div id="login">
-          <div id="logo">
-            <img src="/assets/login/assets/pearlogo-new.png" alt="" />
+    <main class="loginMain">
+      <div class="loginContainer" id="container">
+        <div class="loginFormSection" id="login">
+          <div class="loginLogoFrame" id="logo">
+            <img
+              class="loginLogo"
+              src="../assets/perlogo-nobg.png"
+              alt="Logo da Pear"
+            />
           </div>
 
-          <div id="entrar">
-            <form onsubmit="logarNaPagina(event)">
-              <h1 id="tituloEntrar">Entrar</h1>
+          <div class="loginFormWrapper" id="entrar">
+            <form class="authForm" onsubmit="logarNaPagina(event)">
+              <h1 class="authFormTitle" id="tituloEntrar">Entrar</h1>
 
               <input
-                type="text"
+                class="authInput"
+                type="email"
                 name="email"
                 id="email"
                 placeholder="Email"
-                autocomplete="off"
+                autocomplete="email"
+                required
               />
 
               <input
+                class="authInput"
                 type="password"
                 name="senha"
                 id="senha"
                 placeholder="Senha"
+                required
               />
 
-              <a href="#">Esqueceu sua senha?</a>
+              <a class="forgotPasswordLink" href="#">Esqueceu sua senha?</a>
 
-              <button
-                type="submit"
-                id="btn-entrar"
-                class="btn-entrar"
-                onclick="logarNaPagina(event)"
-              >
+              <button type="submit" class="btnAuth btnEntrar" id="btn-entrar">
                 Entrar
               </button>
             </form>
           </div>
         </div>
 
-        <div id="cadastre-se">
-          <h1>Seja bem-vindo!</h1>
+        <div class="loginWelcomeSection" id="cadastre-se">
+          <h2 class="welcomeTitle">Seja bem-vindo!</h2>
 
-          <p id="paragrafos">
-            Parabéns! <br />
-            <br />
-            Obrigado por se cadastrar em nosso site, agora realize
-            <br />
-            o login para poder entrar e realizar suas compras :)
+          <p class="welcomeText" id="paragrafos">
+            Parabéns!<br /><br />
+            Obrigado por se cadastrar em nosso site. Agora, realize o login para
+            poder entrar e aproveitar as suas compras! :)
           </p>
 
-          <button
-            type="submit"
+          <a
+            href="../pages/cadastro.html"
+            class="btnAuth btnRedirectRegister"
             id="btn-registrar"
-            class="btn-registrar"
-            onclick="registrarConta(event)"
           >
             Registre-se
-          </button>
+          </a>
         </div>
       </div>
     </main>
